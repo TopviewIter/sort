@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class BubbleSort {
 
 	public static void bubbleSort(int[] array){
-		for(int i = 0; i < array.length; i++){ //趟数
+		for(int i = 0; i < array.length - 1; i++){ //趟数
 			boolean flag = false; //优化标记
 //			for(int j = 0; j < array.length - i - 1; j++){ //比较
 //				if(array[j] > array[j + 1]){ //突破点

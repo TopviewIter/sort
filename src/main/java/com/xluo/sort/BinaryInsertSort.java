@@ -28,8 +28,8 @@ public class BinaryInsertSort {
 						start = mid + 1;
 					}
 				}
-				for(int j = i; j > start; j--){ //这里使用start,不用end,是因为 当不能整除时,会忽略小数部分,所以取值偏向start
-					array[j] = array[j - 1];
+				for(int j = i - 1; j >= start; j--){ //0-mid均为大于等于target的，那么应该从mid之后插入,而这时mid+1=start
+					array[j + 1] = array[j];
 				}
 				array[start] = target;
 			}
@@ -40,5 +40,8 @@ public class BinaryInsertSort {
 	public static void main(String[] args) {
 		binaryInsertSort(new int[]{0, 1, 2, 3, 1, 3, 6, 7, 1, 9, -1});
 		binaryInsertSort(new int[]{0, 1, 0, 3, 1, 3, 6, 7, 1, 9});
+		binaryInsertSort(new int[]{9, 9, 0, 3, 1, 3, 6, 7, 1, 9});	
+		binaryInsertSort(new int[]{1, 3, 3, 4, 2});
+		binaryInsertSort(new int[]{1, 3, 4, 2});
 	}
 }

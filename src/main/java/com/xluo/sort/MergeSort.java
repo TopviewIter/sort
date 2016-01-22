@@ -28,13 +28,14 @@ public class MergeSort {
 			int center = (left + right) >> 1;
 			recurrence(array, left, center);
 			recurrence(array, center + 1, right);
-			merge(array, left, center, right);
+			merge(array, left, right);
 		}
 	}
 	
-	public static void merge(int[] array, int left, int center, int right){
+	public static void merge(int[] array, int left, int right){
 		//辅助空间
 		int[] temp = new int[array.length];
+		int center = (left + right) >> 1;
 		int secondArrayIndex = center + 1;
 		int tempIndex = left;
 		int firstArrayIndex = left;

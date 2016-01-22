@@ -18,13 +18,29 @@ public class InSertSort {
 	public static void insertSort(int[] array){
 		for(int i = 1; i < array.length; i++){
 			if(array[i] < array[i - 1]){ //突破点
-				array[0] = array[i];
+				int temp = array[i];
 				int j = i - 1; //移动点
 				do{
 					array[j + 1] = array[j];
 					j--;
-				}while(j >= 0 && array[j] > array[0]);
-				array[j + 1] = array[0]; //插入点
+				}while(j >= 0 && array[j] > temp);
+				array[j + 1] = temp; //插入点
+			}
+		}
+		System.out.println(Arrays.toString(array));
+	}
+	
+	public static void insertSort_02(int[] array){
+		for(int i = 0; i < array.length - 1; i++){
+			if(array[i] < array[i + 1]){
+				int j = i + 1;
+				int temp = array[i + 1];
+				do{
+					array[j] = array[j - 1];
+					j--;
+				}while(j > 0 && array[j] < temp);//这里会漏掉O号元素
+				if(j == 0)array[j] = temp;
+				else array[j + 1] = temp;
 			}
 		}
 		System.out.println(Arrays.toString(array));
@@ -33,6 +49,10 @@ public class InSertSort {
 	public static void main(String[] args) {
 		insertSort(new int[]{0, 1, 2, 3, 1, 3, 6, 7, 1, 9});
 		insertSort(new int[]{0, 1, 0, 3, 1, 3, 6, 7, 1, 9});
+		insertSort_02(new int[]{0, 1, 2, 3, 1, 3, 6, 7, 1, 9});
+		insertSort_02(new int[]{0, 1, 0, 3, 1, 3, 6, 7, 1, 9});
+		insertSort_02(new int[]{1, 0, 3, 1, 3, 6, 7, 1, 9});
+		insertSort_02(new int[]{8, 1, 9, 3, 4});
 	}
 	
 }

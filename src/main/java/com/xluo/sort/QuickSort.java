@@ -55,7 +55,8 @@ public class QuickSort {
 	public static void main(String[] args) {
 //		quickSort(new int[]{0, 1, 2, 3, 1, 3, 6, 7, 1, 9, -1}, 0, 10);
 //		quickSort(new int[]{0, 1, 0, 3, 1, 3, 6, 7, 1, 9}, 0, 9);
-		quickSort(new int[]{0, 0, 0, 1, 1, 1, 2}, 0, 6);
+//		quickSort(new int[]{0, 0, 0, 1, 1, 1, 2}, 0, 6);
+		quickSort(new int[]{51, 22, 83, 46, 75, 18, 68, 30}, 0, 7);
 	}
 	
 }
